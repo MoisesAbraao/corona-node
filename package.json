@@ -1,0 +1,9 @@
+{
+  "name": "corona_node",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "puppeteer": "^3.0.0"
+  }
+}
