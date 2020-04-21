@@ -8,10 +8,16 @@ async function getCoronaCases() {
     await page.screenshot({path: 'screenshot.png'});
 
     const totalCases = await page.evaluate(() => {
-        return document.querySelector('.maincounter-number').innerText
+        cases = document.querySelectorAll('.maincounter-number');
+        return cases[0].innerText;
       });
+
+    const totalDeaths = await page.evaluate(() => {
+        deaths = document.querySelectorAll('.maincounter-number');
+        return deaths[1].innerText;
+    });
     
-    console.log(`O Brasil possui ${totalCases} casos confirmados de CODIV-19`);
+    console.log(`O Brasil possui ${totalCases} casos confirmados de CODIV-19 e um total de ${totalDeaths} mortos.`);
     // await browser.close()
 }
 
